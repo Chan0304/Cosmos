@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cosmic Community - The Cosmic Energy</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" data-aos="fade-down">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <i class="fas fa-star"></i>
+        <span>The Cosmic Energy</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="meditation.html">Meditation</a></li>
+        <li><a href="cosmic-wisdom.html">Wisdom</a></li>
+        <li><a href="energy-healing.html">Healing</a></li>
+        <li><a href="cosmic-community.html" class="active">Community</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Audio Controls -->
+  <div class="audio-controls">
+    <button id="audioToggle" class="audio-btn">
+      <i class="fas fa-music"></i>
+    </button>
+    <audio id="backgroundAudio" loop>
+      <source src="calm-space-music-312291.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <header class="page-header" data-aos="fade-up">
+      <h1>Cosmic Community</h1>
+      <p>Connect with fellow cosmic travelers</p>
+    </header>
+
+    <!-- Community Stats -->
+    <section class="community-stats" data-aos="fade-up" data-aos-delay="200">
+      <div class="stats-grid">
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="stat-number">1,337</div>
+          <div class="stat-label">Cosmic Souls</div>
+        </div>
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
+          <div class="stat-number">42</div>
+          <div class="stat-label">Daily Events</div>
+        </div>
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="500">
+          <div class="stat-number">∞</div>
+          <div class="stat-label">Infinite Wisdom</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="events-section" data-aos="fade-up" data-aos-delay="600">
+      <h2>Cosmic Events</h2>
+      <div class="events-grid">
+        <div class="event-card" data-aos="fade-right" data-aos-delay="700">
+          <div class="event-date">
+            <span class="day">15</span>
+            <span class="month">Dec</span>
+          </div>
+          <div class="event-details">
+            <h3>Full Moon Meditation</h3>
+            <p>Join us for a powerful full moon meditation session</p>
+            <div class="event-time">8:00 PM EST</div>
+            <button class="join-btn">Join Event</button>
+          </div>
+        </div>
+
+        <div class="event-card" data-aos="fade-left" data-aos-delay="800">
+          <div class="event-date">
+            <span class="day">20</span>
+            <span class="month">Dec</span>
+          </div>
+          <div class="event-details">
+            <h3>Cosmic Wisdom Circle</h3>
+            <p>Share and receive wisdom in our community circle</p>
+            <div class="event-time">7:00 PM EST</div>
+            <button class="join-btn">Join Event</button>
+          </div>
+        </div>
+
+        <div class="event-card" data-aos="fade-right" data-aos-delay="900">
+          <div class="event-date">
+            <span class="day">25</span>
+            <span class="month">Dec</span>
+          </div>
+          <div class="event-details">
+            <h3>Energy Healing Workshop</h3>
+            <p>Learn advanced energy healing techniques</p>
+            <div class="event-time">6:30 PM EST</div>
+            <button class="join-btn">Join Event</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community Forums -->
+    <section class="forums-section" data-aos="fade-up" data-aos-delay="1000">
+      <h2>Cosmic Forums</h2>
+      <div class="forum-categories">
+        <div class="forum-category" data-aos="zoom-in" data-aos-delay="1100">
+          <div class="category-icon">
+            <i class="fas fa-moon"></i>
+          </div>
+          <h3>Meditation & Practice</h3>
+          <p>Share your meditation experiences and techniques</p>
+          <div class="topic-count">156 topics</div>
+        </div>
+
+        <div class="forum-category" data-aos="zoom-in" data-aos-delay="1200">
+          <div class="category-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>Cosmic Experiences</h3>
+          <p>Share your spiritual and cosmic experiences</p>
+          <div class="topic-count">89 topics</div>
+        </div>
+
+        <div class="forum-category" data-aos="zoom-in" data-aos-delay="1300">
+          <div class="category-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3>Healing & Support</h3>
+          <p>Support each other on your healing journey</p>
+          <div class="topic-count">203 topics</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Member Spotlight -->
+    <section class="member-spotlight" data-aos="fade-up" data-aos-delay="1400">
+      <h2>Member Spotlight</h2>
+      <div class="spotlight-card">
+        <div class="member-avatar">
+          <i class="fas fa-user-astronaut"></i>
+        </div>
+        <div class="member-info">
+          <h3>Stellar Wanderer</h3>
+          <p>"This community has transformed my spiritual journey. The cosmic energy here is truly magical."</p>
+          <div class="member-stats">
+            <span>Member since: 2023</span>
+            <span>Posts: 47</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join Community -->
+    <section class="join-community" data-aos="fade-up" data-aos-delay="1500">
+      <h2>Join Our Cosmic Family</h2>
+      <p>Connect with like-minded souls on your spiritual journey</p>
+      <div class="join-form">
+        <input type="email" placeholder="Enter your email" class="join-input">
+        <button class="join-community-btn">Join Community</button>
+      </div>
+    </section>
+
+    <footer class="main-footer" data-aos="fade-up">
+      <div class="footer-content">
+        <p>✨ Embrace your cosmic journey ✨</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
