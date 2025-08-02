@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cosmic Wisdom - The Cosmic Energy</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" data-aos="fade-down">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <i class="fas fa-star"></i>
+        <span>The Cosmic Energy</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="meditation.html">Meditation</a></li>
+        <li><a href="cosmic-wisdom.html" class="active">Wisdom</a></li>
+        <li><a href="energy-healing.html">Healing</a></li>
+        <li><a href="cosmic-community.html">Community</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Audio Controls -->
+  <div class="audio-controls">
+    <button id="audioToggle" class="audio-btn">
+      <i class="fas fa-music"></i>
+    </button>
+    <audio id="backgroundAudio" loop>
+      <source src="calm-space-music-312291.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <header class="page-header" data-aos="fade-up">
+      <h1>Cosmic Wisdom</h1>
+      <p>Ancient knowledge for modern souls</p>
+    </header>
+
+    <!-- Daily Quote -->
+    <section class="daily-quote" data-aos="fade-up" data-aos-delay="200">
+      <div class="quote-container">
+        <blockquote id="dailyQuote">
+          "The moment you let go of resistance, life begins to flow effortlessly. The universe always has your back."
+        </blockquote>
+        <cite id="quoteAuthor">- The Cosmic Energy</cite>
+        <button class="new-quote-btn" id="newQuoteBtn">New Wisdom</button>
+      </div>
+    </section>
+
+    <!-- Wisdom Categories -->
+    <section class="wisdom-categories" data-aos="fade-up" data-aos-delay="400">
+      <h2>Cosmic Teachings</h2>
+      <div class="category-grid">
+        <div class="category-card" data-aos="zoom-in" data-aos-delay="500">
+          <div class="category-icon">
+            <i class="fas fa-moon"></i>
+          </div>
+          <h3>Lunar Wisdom</h3>
+          <p>Harness the power of lunar cycles and feminine energy</p>
+          <ul>
+            <li>Moon phases and energy</li>
+            <li>Intuitive development</li>
+            <li>Emotional healing</li>
+          </ul>
+        </div>
+
+        <div class="category-card" data-aos="zoom-in" data-aos-delay="600">
+          <div class="category-icon">
+            <i class="fas fa-sun"></i>
+          </div>
+          <h3>Solar Power</h3>
+          <p>Connect with masculine energy and solar consciousness</p>
+          <ul>
+            <li>Personal power</li>
+            <li>Manifestation techniques</li>
+            <li>Confidence building</li>
+          </ul>
+        </div>
+
+        <div class="category-card" data-aos="zoom-in" data-aos-delay="700">
+          <div class="category-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>Stellar Knowledge</h3>
+          <p>Access wisdom from distant stars and cosmic forces</p>
+          <ul>
+            <li>Astral projection</li>
+            <li>Cosmic consciousness</li>
+            <li>Interdimensional travel</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wisdom Library -->
+    <section class="wisdom-library" data-aos="fade-up" data-aos-delay="800">
+      <h2>Sacred Texts</h2>
+      <div class="library-grid">
+        <div class="text-card" data-aos="fade-right" data-aos-delay="900">
+          <h3>The Cosmic Code</h3>
+          <p>Ancient wisdom encoded in the fabric of reality itself. Learn to read the signs and symbols that surround us.</p>
+          <button class="read-btn">Read More</button>
+        </div>
+
+        <div class="text-card" data-aos="fade-left" data-aos-delay="1000">
+          <h3>Silence is Power</h3>
+          <p>Within silence, there is clarity. The cosmic voice whispers only to those who listen deeply.</p>
+          <button class="read-btn">Read More</button>
+        </div>
+
+        <div class="text-card" data-aos="fade-right" data-aos-delay="1100">
+          <h3>Flow With the Universe</h3>
+          <p>Resistance creates suffering. Learn to flow with the natural rhythms of existence.</p>
+          <button class="read-btn">Read More</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="main-footer" data-aos="fade-up">
+      <div class="footer-content">
+        <p>✨ Embrace your cosmic journey ✨</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
