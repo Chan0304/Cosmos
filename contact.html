@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - The Cosmic Energy</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" data-aos="fade-down">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <i class="fas fa-star"></i>
+        <span>The Cosmic Energy</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="meditation.html">Meditation</a></li>
+        <li><a href="cosmic-wisdom.html">Wisdom</a></li>
+        <li><a href="energy-healing.html">Healing</a></li>
+        <li><a href="cosmic-community.html">Community</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Audio Controls -->
+  <div class="audio-controls">
+    <button id="audioToggle" class="audio-btn">
+      <i class="fas fa-music"></i>
+    </button>
+    <audio id="backgroundAudio" loop>
+      <source src="calm-space-music-312291.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <header class="page-header" data-aos="fade-up">
+      <h1>Contact Us</h1>
+      <p>Connect with the cosmic energy</p>
+    </header>
+
+    <!-- Contact Information -->
+    <section class="contact-info" data-aos="fade-up" data-aos-delay="200">
+      <div class="info-grid">
+        <div class="info-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="info-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3>Email</h3>
+          <p>hello@cosmicenergy.com</p>
+        </div>
+
+        <div class="info-card" data-aos="zoom-in" data-aos-delay="400">
+          <div class="info-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <h3>Phone</h3>
+          <p>+1 (555) COSMIC</p>
+        </div>
+
+        <div class="info-card" data-aos="zoom-in" data-aos-delay="500">
+          <div class="info-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3>Location</h3>
+          <p>Cosmic Realm, Universe</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section" data-aos="fade-up" data-aos-delay="600">
+      <h2>Send Cosmic Message</h2>
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject" required>
+            <option value="">Choose a topic</option>
+            <option value="meditation">Meditation Guidance</option>
+            <option value="healing">Energy Healing</option>
+            <option value="wisdom">Cosmic Wisdom</option>
+            <option value="community">Community</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Share your cosmic thoughts..." required></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">Send Cosmic Message</button>
+      </form>
+    </section>
+
+    <!-- Support Options -->
+    <section class="support-options" data-aos="fade-up" data-aos-delay="800">
+      <h2>Cosmic Support</h2>
+      <div class="support-grid">
+        <div class="support-card" data-aos="fade-right" data-aos-delay="900">
+          <div class="support-icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <h3>Knowledge Base</h3>
+          <p>Find answers to common cosmic questions</p>
+          <button class="support-btn">Browse Articles</button>
+        </div>
+
+        <div class="support-card" data-aos="fade-left" data-aos-delay="1000">
+          <div class="support-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <h3>Live Chat</h3>
+          <p>Connect with our cosmic guides instantly</p>
+          <button class="support-btn">Start Chat</button>
+        </div>
+
+        <div class="support-card" data-aos="fade-right" data-aos-delay="1100">
+          <div class="support-icon">
+            <i class="fas fa-calendar"></i>
+          </div>
+          <h3>Book Session</h3>
+          <p>Schedule a personal cosmic consultation</p>
+          <button class="support-btn">Book Now</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" data-aos="fade-up" data-aos-delay="1200">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="1300">
+          <div class="faq-question">
+            <h3>How do I start my cosmic journey?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Begin with our guided meditation sessions and gradually explore the cosmic wisdom teachings. Start with the "Cosmic Alignment" session for beginners.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="1400">
+          <div class="faq-question">
+            <h3>What is energy healing?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Energy healing works with your body's natural energy systems to promote physical, emotional, and spiritual well-being through various techniques like Reiki and crystal healing.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="1500">
+          <div class="faq-question">
+            <h3>How can I join the community?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Simply visit our Community page and sign up with your email. You'll receive access to our forums, events, and cosmic family.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="main-footer" data-aos="fade-up">
+      <div class="footer-content">
+        <p>✨ Embrace your cosmic journey ✨</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
