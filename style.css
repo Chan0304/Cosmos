@@ -1,3 +1,6 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
 /* Basic Reset */
 * {
   margin: 0;
@@ -6,12 +9,190 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #ffffff;
-  background: linear-gradient(135deg, #0d0d1f 0%, #1a1a3a 50%, #0d0d1f 100%);
+  background: #0a0a0a;
   line-height: 1.6;
   overflow-x: hidden;
   min-height: 100vh;
+  position: relative;
+}
+
+/* Enhanced Cosmic Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 90% 20%, rgba(255, 219, 120, 0.2) 0%, transparent 50%);
+  z-index: -2;
+}
+
+/* Animated Stars Background */
+.stars-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 160px 30px, #ddd, transparent),
+    radial-gradient(1px 1px at 200px 60px, #fff, transparent),
+    radial-gradient(2px 2px at 250px 20px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 300px 90px, #eee, transparent),
+    radial-gradient(2px 2px at 350px 40px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 400px 70px, #fff, transparent);
+  background-repeat: repeat;
+  background-size: 450px 150px;
+  animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* Floating Planets */
+.planet {
+  position: fixed;
+  border-radius: 50%;
+  z-index: -1;
+  animation: float 20s ease-in-out infinite;
+}
+
+.planet-1 {
+  width: 60px;
+  height: 60px;
+  top: 15%;
+  left: 10%;
+  background: radial-gradient(circle at 30% 30%, #ff6b6b, #ee5a52);
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+  animation-delay: 0s;
+}
+
+.planet-2 {
+  width: 40px;
+  height: 40px;
+  top: 25%;
+  right: 15%;
+  background: radial-gradient(circle at 40% 40%, #4ecdc4, #44a08d);
+  box-shadow: 0 0 15px rgba(78, 205, 196, 0.5);
+  animation-delay: -5s;
+}
+
+.planet-3 {
+  width: 80px;
+  height: 80px;
+  bottom: 20%;
+  left: 20%;
+  background: radial-gradient(circle at 35% 35%, #45b7d1, #96c93d);
+  box-shadow: 0 0 25px rgba(69, 183, 209, 0.5);
+  animation-delay: -10s;
+}
+
+.planet-4 {
+  width: 50px;
+  height: 50px;
+  bottom: 30%;
+  right: 25%;
+  background: radial-gradient(circle at 45% 45%, #f39c12, #e67e22);
+  box-shadow: 0 0 18px rgba(243, 156, 18, 0.5);
+  animation-delay: -15s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-20px) rotate(90deg); }
+  50% { transform: translateY(-10px) rotate(180deg); }
+  75% { transform: translateY(-30px) rotate(270deg); }
+}
+
+/* Connecting Stars */
+.star-connection {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: -1;
+  animation: starPulse 3s ease-in-out infinite;
+}
+
+.star-connection::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes starPulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+
+/* Page-specific backgrounds */
+body.home-page::before {
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(120, 119, 198, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 119, 198, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+}
+
+body.about-page::before {
+  background: 
+    radial-gradient(circle at 30% 40%, rgba(255, 219, 120, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 70% 60%, rgba(120, 219, 255, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 90% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%);
+}
+
+body.meditation-page::before {
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(120, 119, 198, 0.5) 0%, transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(255, 219, 120, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+}
+
+body.wisdom-page::before {
+  background: 
+    radial-gradient(circle at 40% 30%, rgba(255, 119, 198, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 60% 70%, rgba(120, 219, 255, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 80% 40%, rgba(255, 219, 120, 0.3) 0%, transparent 50%);
+}
+
+body.healing-page::before {
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(120, 219, 255, 0.5) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 119, 198, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(255, 219, 120, 0.3) 0%, transparent 60%);
+}
+
+body.community-page::before {
+  background: 
+    radial-gradient(circle at 60% 40%, rgba(255, 219, 120, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, rgba(120, 119, 198, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 119, 198, 0.3) 0%, transparent 50%);
+}
+
+body.contact-page::before {
+  background: 
+    radial-gradient(circle at 70% 30%, rgba(120, 219, 255, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 30% 70%, rgba(255, 219, 120, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 90% 60%, rgba(255, 119, 198, 0.3) 0%, transparent 50%);
 }
 
 /* Particle background positioning */
@@ -188,7 +369,14 @@ p {
 .title-word {
   animation: color-animation 4s linear infinite;
   font-size: 4rem;
-  font-weight: bold;
+  font-weight: 900;
+  font-family: 'Orbitron', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-shadow: 
+    0 0 10px rgba(255,255,255,0.8),
+    0 0 20px rgba(255,255,255,0.6),
+    0 0 30px rgba(255,255,255,0.4);
 }
 
 .title-word-1 {
@@ -1482,6 +1670,4 @@ p {
     flex-direction: column;
     align-items: center;
   }
-}
-
-
+} 
