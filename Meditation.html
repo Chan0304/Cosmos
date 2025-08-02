@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cosmic Meditation - The Cosmic Energy</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" data-aos="fade-down">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <i class="fas fa-star"></i>
+        <span>The Cosmic Energy</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="meditation.html" class="active">Meditation</a></li>
+        <li><a href="cosmic-wisdom.html">Wisdom</a></li>
+        <li><a href="energy-healing.html">Healing</a></li>
+        <li><a href="cosmic-community.html">Community</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Audio Controls -->
+  <div class="audio-controls">
+    <button id="audioToggle" class="audio-btn">
+      <i class="fas fa-music"></i>
+    </button>
+    <audio id="backgroundAudio" loop>
+      <source src="calm-space-music-312291.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <header class="page-header" data-aos="fade-up">
+      <h1>Cosmic Meditation</h1>
+      <p>Connect with the universe through guided meditation</p>
+    </header>
+
+    <!-- Breathing Exercise -->
+    <section class="breathing-section" data-aos="fade-up" data-aos-delay="200">
+      <h2>Cosmic Breathing</h2>
+      <div class="breathing-circle" id="breathingCircle">
+        <div class="breathing-text">
+          <span id="breathingText">Breathe In</span>
+          <div class="timer" id="timer">4</div>
+        </div>
+      </div>
+      <button class="breathing-btn" id="startBreathing">Start Breathing Exercise</button>
+    </section>
+
+    <!-- Meditation Sessions -->
+    <section class="meditation-sessions" data-aos="fade-up" data-aos-delay="400">
+      <h2>Guided Sessions</h2>
+      <div class="session-grid">
+        <div class="session-card" data-aos="zoom-in" data-aos-delay="500">
+          <div class="session-icon">
+            <i class="fas fa-moon"></i>
+          </div>
+          <h3>Cosmic Alignment</h3>
+          <p>15 minutes • Beginner</p>
+          <p>Align your energy with the cosmic forces</p>
+          <button class="session-btn" data-session="cosmic-alignment">Start Session</button>
+        </div>
+
+        <div class="session-card" data-aos="zoom-in" data-aos-delay="600">
+          <div class="session-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>Stellar Connection</h3>
+          <p>20 minutes • Intermediate</p>
+          <p>Connect with the energy of distant stars</p>
+          <button class="session-btn" data-session="stellar-connection">Start Session</button>
+        </div>
+
+        <div class="session-card" data-aos="zoom-in" data-aos-delay="700">
+          <div class="session-icon">
+            <i class="fas fa-infinity"></i>
+          </div>
+          <h3>Infinite Consciousness</h3>
+          <p>30 minutes • Advanced</p>
+          <p>Explore the depths of cosmic consciousness</p>
+          <button class="session-btn" data-session="infinite-consciousness">Start Session</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meditation Timer -->
+    <section class="meditation-timer" data-aos="fade-up" data-aos-delay="800">
+      <h2>Custom Meditation</h2>
+      <div class="timer-controls">
+        <div class="time-option" data-time="5">5 min</div>
+        <div class="time-option" data-time="10">10 min</div>
+        <div class="time-option" data-time="15">15 min</div>
+        <div class="time-option" data-time="20">20 min</div>
+        <div class="time-option" data-time="30">30 min</div>
+      </div>
+      <div class="timer-display">
+        <div class="time-display" id="timeDisplay">00:00</div>
+        <button class="timer-btn" id="startTimer">Start Timer</button>
+        <button class="timer-btn" id="resetTimer">Reset</button>
+      </div>
+    </section>
+
+    <footer class="main-footer" data-aos="fade-up">
+      <div class="footer-content">
+        <p>✨ Embrace your cosmic journey ✨</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
