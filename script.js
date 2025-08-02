@@ -5,6 +5,74 @@ AOS.init({
   offset: 100
 });
 
+// Cosmic background interactions
+document.addEventListener('DOMContentLoaded', function() {
+  // Add cosmic glow effect to planets on hover
+  const planets = document.querySelectorAll('.planet');
+  planets.forEach(planet => {
+    planet.addEventListener('mouseenter', function() {
+      this.style.transform = 'scale(1.2)';
+      this.style.boxShadow = '0 0 30px rgba(255,255,255,0.8)';
+    });
+    
+    planet.addEventListener('mouseleave', function() {
+      this.style.transform = 'scale(1)';
+      this.style.boxShadow = '';
+    });
+  });
+
+  // Add cosmic typing effect to titles
+  const titles = document.querySelectorAll('h1');
+  titles.forEach(title => {
+    if (title.classList.contains('cosmic-title')) {
+      const words = title.querySelectorAll('.title-word');
+      words.forEach((word, index) => {
+        word.style.opacity = '0';
+        setTimeout(() => {
+          word.style.transition = 'opacity 0.5s ease-in-out';
+          word.style.opacity = '1';
+        }, index * 200);
+      });
+    }
+  });
+
+  // Add cosmic particle interaction on click
+  document.addEventListener('click', function(e) {
+    const particle = document.createElement('div');
+    particle.style.position = 'fixed';
+    particle.style.left = e.clientX + 'px';
+    particle.style.top = e.clientY + 'px';
+    particle.style.width = '4px';
+    particle.style.height = '4px';
+    particle.style.background = '#fff';
+    particle.style.borderRadius = '50%';
+    particle.style.pointerEvents = 'none';
+    particle.style.zIndex = '9999';
+    particle.style.animation = 'cosmicParticle 1s ease-out forwards';
+    document.body.appendChild(particle);
+    
+    setTimeout(() => {
+      document.body.removeChild(particle);
+    }, 1000);
+  });
+});
+
+// Add cosmic particle animation
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes cosmicParticle {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0) translateY(-50px);
+      opacity: 0;
+    }
+  }
+`;
+document.head.appendChild(style);
+
 // Initialize particles.js
 particlesJS('particles-js', {
   particles: {
@@ -703,4 +771,4 @@ style.textContent = `
 document.head.appendChild(style);
 
 console.log('✨ Cosmic Energy Website Loaded Successfully! ✨');
-console.log('May the cosmic forces guide your journey through this digital realm.');
+console.log('May the cosmic forces guide your journey through this digital realm.'); 
