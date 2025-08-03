@@ -1,1673 +1,774 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
-
-/* Basic Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #ffffff;
-  background: #0a0a0a;
-  line-height: 1.6;
-  overflow-x: hidden;
-  min-height: 100vh;
-  position: relative;
-}
-
-/* Enhanced Cosmic Background */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.2) 0%, transparent 50%),
-    radial-gradient(circle at 90% 20%, rgba(255, 219, 120, 0.2) 0%, transparent 50%);
-  z-index: -2;
-}
-
-/* Animated Stars Background */
-.stars-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-image: 
-    radial-gradient(2px 2px at 20px 30px, #eee, transparent),
-    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
-    radial-gradient(1px 1px at 90px 40px, #fff, transparent),
-    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
-    radial-gradient(2px 2px at 160px 30px, #ddd, transparent),
-    radial-gradient(1px 1px at 200px 60px, #fff, transparent),
-    radial-gradient(2px 2px at 250px 20px, rgba(255,255,255,0.7), transparent),
-    radial-gradient(1px 1px at 300px 90px, #eee, transparent),
-    radial-gradient(2px 2px at 350px 40px, rgba(255,255,255,0.8), transparent),
-    radial-gradient(1px 1px at 400px 70px, #fff, transparent);
-  background-repeat: repeat;
-  background-size: 450px 150px;
-  animation: twinkle 4s ease-in-out infinite alternate;
-}
-
-@keyframes twinkle {
-  0% { opacity: 0.6; }
-  100% { opacity: 1; }
-}
-
-/* Floating Planets */
-.planet {
-  position: fixed;
-  border-radius: 50%;
-  z-index: -1;
-  animation: float 20s ease-in-out infinite;
-}
-
-.planet-1 {
-  width: 60px;
-  height: 60px;
-  top: 15%;
-  left: 10%;
-  background: radial-gradient(circle at 30% 30%, #ff6b6b, #ee5a52);
-  box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
-  animation-delay: 0s;
-}
-
-.planet-2 {
-  width: 40px;
-  height: 40px;
-  top: 25%;
-  right: 15%;
-  background: radial-gradient(circle at 40% 40%, #4ecdc4, #44a08d);
-  box-shadow: 0 0 15px rgba(78, 205, 196, 0.5);
-  animation-delay: -5s;
-}
-
-.planet-3 {
-  width: 80px;
-  height: 80px;
-  bottom: 20%;
-  left: 20%;
-  background: radial-gradient(circle at 35% 35%, #45b7d1, #96c93d);
-  box-shadow: 0 0 25px rgba(69, 183, 209, 0.5);
-  animation-delay: -10s;
-}
-
-.planet-4 {
-  width: 50px;
-  height: 50px;
-  bottom: 30%;
-  right: 25%;
-  background: radial-gradient(circle at 45% 45%, #f39c12, #e67e22);
-  box-shadow: 0 0 18px rgba(243, 156, 18, 0.5);
-  animation-delay: -15s;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  25% { transform: translateY(-20px) rotate(90deg); }
-  50% { transform: translateY(-10px) rotate(180deg); }
-  75% { transform: translateY(-30px) rotate(270deg); }
-}
-
-/* Connecting Stars */
-.star-connection {
-  position: fixed;
-  width: 2px;
-  height: 2px;
-  background: #fff;
-  border-radius: 50%;
-  z-index: -1;
-  animation: starPulse 3s ease-in-out infinite;
-}
-
-.star-connection::before {
-  content: '';
-  position: absolute;
-  width: 100px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-@keyframes starPulse {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.5); }
-}
-
-/* Page-specific backgrounds */
-body.home-page::before {
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(120, 119, 198, 0.4) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(255, 119, 198, 0.4) 0%, transparent 50%),
-    radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
-}
-
-body.about-page::before {
-  background: 
-    radial-gradient(circle at 30% 40%, rgba(255, 219, 120, 0.4) 0%, transparent 50%),
-    radial-gradient(circle at 70% 60%, rgba(120, 219, 255, 0.4) 0%, transparent 50%),
-    radial-gradient(circle at 90% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%);
-}
-
-body.meditation-page::before {
-  background: 
-    radial-gradient(circle at 50% 50%, rgba(120, 119, 198, 0.5) 0%, transparent 60%),
-    radial-gradient(circle at 20% 80%, rgba(255, 219, 120, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
-}
-
-body.wisdom-page::before {
-  background: 
-    radial-gradient(circle at 40% 30%, rgba(255, 119, 198, 0.4) 0%, transparent 50%),
-    radial-gradient(circle at 60% 70%, rgba(120, 219, 255, 0.4) 0%, transparent 50%),
-    radial-gradient(circle at 80% 40%, rgba(255, 219, 120, 0.3) 0%, transparent 50%);
-}
-
-body.healing-page::before {
-  background: 
-    radial-gradient(circle at 25% 25%, rgba(120, 219, 255, 0.5) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(255, 119, 198, 0.4) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(255, 219, 120, 0.3) 0%, transparent 60%);
-}
-
-body.community-page::before {
-  background: 
-    radial-gradient(circle at 60% 40%, rgba(255, 219, 120, 0.4) 0%, transparent 50%),
-    radial-gradient(circle at 40% 60%, rgba(120, 119, 198, 0.4) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(255, 119, 198, 0.3) 0%, transparent 50%);
-}
-
-body.contact-page::before {
-  background: 
-    radial-gradient(circle at 70% 30%, rgba(120, 219, 255, 0.4) 0%, transparent 50%),
-    radial-gradient(circle at 30% 70%, rgba(255, 219, 120, 0.4) 0%, transparent 50%),
-    radial-gradient(circle at 90% 60%, rgba(255, 119, 198, 0.3) 0%, transparent 50%);
-}
-
-/* Particle background positioning */
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  top: 0;
-  left: 0;
-}
-
-/* Navigation */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(13, 13, 31, 0.95);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
-  padding: 1rem 0;
-  transition: all 0.3s ease;
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
-}
-
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #00ffe1;
-}
-
-.nav-logo i {
-  font-size: 1.8rem;
-  animation: pulse 2s infinite;
-}
-
-.nav-menu {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-}
-
-.nav-menu a {
-  color: #ffffff;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.nav-menu a:hover,
-.nav-menu a.active {
-  color: #00ffe1;
-}
-
-.nav-menu a::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #00ffe1;
-  transition: width 0.3s ease;
-}
-
-.nav-menu a:hover::after,
-.nav-menu a.active::after {
-  width: 100%;
-}
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: #ffffff;
-  margin: 3px 0;
-  transition: 0.3s;
-}
-
-/* Audio Controls */
-.audio-controls {
-  position: fixed;
-  top: 100px;
-  right: 20px;
-  z-index: 1001;
-}
-
-.audio-btn {
-  background: rgba(0, 255, 225, 0.2);
-  border: 2px solid #00ffe1;
-  color: #00ffe1;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.audio-btn:hover {
-  background: rgba(0, 255, 225, 0.3);
-  transform: scale(1.1);
-}
-
-/* Container and Layout */
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 120px 20px 50px;
-  text-align: center;
-}
-
-/* Typography */
-h1 {
-  font-size: 3.5rem;
-  margin-bottom: 30px;
-  color: #00ffe1;
-  text-shadow: 0 0 20px #00ffe1;
-  font-weight: 300;
-}
-
-h2 {
-  font-size: 2.5rem;
-  margin: 40px 0 20px;
-  color: #ff9aff;
-  text-shadow: 0 0 15px #ff9aff;
-}
-
-h3 {
-  font-size: 1.8rem;
-  margin: 20px 0 15px;
-  color: #ffffff;
-}
-
-p {
-  font-size: 1.2rem;
-  color: #dcdcdc;
-  margin-bottom: 15px;
-}
-
-/* Hero Section */
-.hero-section {
-  padding: 80px 0;
-  text-align: center;
-}
-
-.cosmic-title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 30px;
-}
-
-.title-word {
-  animation: color-animation 4s linear infinite;
-  font-size: 4rem;
-  font-weight: 900;
-  font-family: 'Orbitron', monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  text-shadow: 
-    0 0 10px rgba(255,255,255,0.8),
-    0 0 20px rgba(255,255,255,0.6),
-    0 0 30px rgba(255,255,255,0.4);
-}
-
-.title-word-1 {
-  --color-1: #00ffe1;
-  --color-2: #ff9aff;
-  --color-3: #ffffff;
-}
-
-.title-word-2 {
-  --color-1: #ff9aff;
-  --color-2: #ffffff;
-  --color-3: #00ffe1;
-}
-
-.title-word-3 {
-  --color-1: #ffffff;
-  --color-2: #00ffe1;
-  --color-3: #ff9aff;
-}
-
-@keyframes color-animation {
-  0%    {color: var(--color-1)}
-  32%   {color: var(--color-1)}
-  33%   {color: var(--color-2)}
-  65%   {color: var(--color-2)}
-  66%   {color: var(--color-3)}
-  99%   {color: var(--color-3)}
-  100%  {color: var(--color-1)}
-}
-
-.hero-subtitle {
-  font-size: 1.5rem;
-  color: #b0b0b0;
-  margin-bottom: 40px;
-}
-
-/* CTA Buttons */
-.cta-buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.cta-btn {
-  padding: 15px 30px;
-  border: 2px solid;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  font-size: 1.1rem;
-}
-
-.cta-btn.primary {
-  background: linear-gradient(45deg, #00ffe1, #00ccb3);
-  border-color: #00ffe1;
-  color: #0d0d1f;
-}
-
-.cta-btn.primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0, 255, 225, 0.3);
-}
-
-.cta-btn.secondary {
-  background: transparent;
-  border-color: #ff9aff;
-  color: #ff9aff;
-}
-
-.cta-btn.secondary:hover {
-  background: rgba(255, 154, 255, 0.1);
-  transform: translateY(-3px);
-}
-
-/* Features Grid */
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin: 60px 0;
-}
-
-.feature-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 40px 30px;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 255, 225, 0.2);
-  border-color: #00ffe1;
-}
-
-.feature-card i {
-  font-size: 3rem;
-  color: #00ffe1;
-  margin-bottom: 20px;
-  display: block;
-}
-
-/* Cosmic Quote */
-.cosmic-quote {
-  margin: 80px 0;
-  padding: 60px;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 154, 255, 0.2);
-}
-
-.cosmic-quote blockquote {
-  font-size: 2rem;
-  font-style: italic;
-  color: #ffffff;
-  margin-bottom: 20px;
-  line-height: 1.4;
-}
-
-.cosmic-quote cite {
-  font-size: 1.2rem;
-  color: #ff9aff;
-}
-
-/* Page Headers */
-.page-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.page-header h1 {
-  margin-bottom: 15px;
-}
-
-.page-header p {
-  font-size: 1.3rem;
-  color: #b0b0b0;
-}
-
-/* About Page */
-.about-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 50px;
-  margin: 60px 0;
-}
-
-.about-text h3 {
-  color: #00ffe1;
-  margin-top: 30px;
-}
-
-.cosmic-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.stat-item {
-  text-align: center;
-  padding: 30px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  border: 1px solid rgba(0, 255, 225, 0.2);
-}
-
-.stat-number {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #00ffe1;
-  margin-bottom: 10px;
-}
-
-.stat-label {
-  font-size: 1.1rem;
-  color: #b0b0b0;
-}
-
-/* Team Section */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin: 60px 0;
-}
-
-.team-member {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 40px 30px;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.team-member:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(255, 154, 255, 0.2);
-}
-
-.member-avatar {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(45deg, #00ffe1, #ff9aff);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-}
-
-.member-avatar i {
-  font-size: 2rem;
-  color: #0d0d1f;
-}
-
-/* Meditation Page */
-.breathing-section {
-  margin: 60px 0;
-  text-align: center;
-}
-
-.breathing-circle {
-  width: 200px;
-  height: 200px;
-  border: 3px solid #00ffe1;
-  border-radius: 50%;
-  margin: 40px auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: breathe 4s ease-in-out infinite;
-  background: rgba(0, 255, 225, 0.1);
-}
-
-@keyframes breathe {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-}
-
-.breathing-text {
-  text-align: center;
-}
-
-.breathing-text span {
-  display: block;
-  font-size: 1.5rem;
-  color: #00ffe1;
-  margin-bottom: 10px;
-}
-
-.timer {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #ff9aff;
-}
-
-.breathing-btn {
-  background: linear-gradient(45deg, #00ffe1, #00ccb3);
-  border: none;
-  color: #0d0d1f;
-  padding: 15px 30px;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.breathing-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0, 255, 225, 0.3);
-}
-
-/* Session Grid */
-.session-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin: 60px 0;
-}
-
-.session-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 40px 30px;
-  text-align: center;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.session-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(255, 154, 255, 0.2);
-}
-
-.session-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(45deg, #ff9aff, #ff6b9d);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-}
-
-.session-icon i {
-  font-size: 2rem;
-  color: #0d0d1f;
-}
-
-.session-btn {
-  background: linear-gradient(45deg, #ff9aff, #ff6b9d);
-  border: none;
-  color: #0d0d1f;
-  padding: 12px 25px;
-  border-radius: 25px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 20px;
-}
-
-.session-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 154, 255, 0.3);
-}
-
-/* Timer Controls */
-.meditation-timer {
-  margin: 60px 0;
-  text-align: center;
-}
-
-.timer-controls {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin: 30px 0;
-  flex-wrap: wrap;
-}
-
-.time-option {
-  padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.time-option:hover,
-.time-option.active {
-  background: rgba(0, 255, 225, 0.2);
-  border-color: #00ffe1;
-  color: #00ffe1;
-}
-
-.timer-display {
-  margin-top: 30px;
-}
-
-.time-display {
-  font-size: 4rem;
-  font-weight: bold;
-  color: #00ffe1;
-  margin-bottom: 20px;
-  text-shadow: 0 0 20px #00ffe1;
-}
-
-.timer-btn {
-  background: linear-gradient(45deg, #00ffe1, #00ccb3);
-  border: none;
-  color: #0d0d1f;
-  padding: 12px 25px;
-  border-radius: 25px;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 0 10px;
-  transition: all 0.3s ease;
-}
-
-.timer-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 255, 225, 0.3);
-}
-
-/* Wisdom Page */
-.daily-quote {
-  margin: 60px 0;
-  text-align: center;
-}
-
-.quote-container {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 60px 40px;
-  border: 1px solid rgba(255, 154, 255, 0.2);
-}
-
-.quote-container blockquote {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  line-height: 1.4;
-}
-
-.new-quote-btn {
-  background: linear-gradient(45deg, #ff9aff, #ff6b9d);
-  border: none;
-  color: #0d0d1f;
-  padding: 12px 25px;
-  border-radius: 25px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 20px;
-  transition: all 0.3s ease;
-}
-
-.new-quote-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 154, 255, 0.3);
-}
-
-/* Category Grid */
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin: 60px 0;
-}
-
-.category-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 40px 30px;
-  text-align: center;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.category-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 255, 225, 0.2);
-}
-
-.category-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(45deg, #00ffe1, #00ccb3);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-}
-
-.category-icon i {
-  font-size: 2rem;
-  color: #0d0d1f;
-}
-
-.category-card ul {
-  list-style: none;
-  margin-top: 20px;
-  text-align: left;
-}
-
-.category-card li {
-  padding: 5px 0;
-  color: #b0b0b0;
-}
-
-.category-card li:before {
-  content: "✨ ";
-  color: #ff9aff;
-}
-
-/* Library Grid */
-.library-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 30px;
-  margin: 60px 0;
-}
-
-.text-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 40px 30px;
-  text-align: left;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.text-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(255, 154, 255, 0.2);
-}
-
-.read-btn {
-  background: linear-gradient(45deg, #00ffe1, #00ccb3);
-  border: none;
-  color: #0d0d1f;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 20px;
-  transition: all 0.3s ease;
-}
-
-.read-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 255, 225, 0.3);
-}
-
-/* Healing Page */
-.chakra-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin: 60px 0;
-}
-
-.chakra-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 40px 30px;
-  text-align: center;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.chakra-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(255, 154, 255, 0.2);
-}
-
-.chakra-icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-  font-size: 2rem;
-  color: #0d0d1f;
-}
-
-.chakra-icon.crown { background: linear-gradient(45deg, #9b59b6, #8e44ad); }
-.chakra-icon.third-eye { background: linear-gradient(45deg, #3498db, #2980b9); }
-.chakra-icon.throat { background: linear-gradient(45deg, #00ffe1, #00ccb3); }
-.chakra-icon.heart { background: linear-gradient(45deg, #e74c3c, #c0392b); }
-.chakra-icon.solar { background: linear-gradient(45deg, #f39c12, #e67e22); }
-.chakra-icon.sacral { background: linear-gradient(45deg, #ff9aff, #ff6b9d); }
-.chakra-icon.root { background: linear-gradient(45deg, #2ecc71, #27ae60); }
-
-.heal-btn {
-  background: linear-gradient(45deg, #ff9aff, #ff6b9d);
-  border: none;
-  color: #0d0d1f;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 20px;
-  transition: all 0.3s ease;
-}
-
-.heal-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 154, 255, 0.3);
-}
-
-/* Technique Grid */
-.technique-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin: 60px 0;
-}
-
-.technique-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 40px 30px;
-  text-align: center;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.technique-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 255, 225, 0.2);
-}
-
-.technique-duration {
-  background: rgba(0, 255, 225, 0.2);
-  color: #00ffe1;
-  padding: 8px 16px;
-  border-radius: 20px;
-  display: inline-block;
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-/* Assessment Form */
-.assessment-form {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 40px;
-  max-width: 500px;
-  margin: 0 auto;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.form-group {
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  color: #ffffff;
-  font-weight: bold;
-}
-
-.form-group select {
-  width: 100%;
-  padding: 12px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  color: #ffffff;
-  font-size: 1rem;
-}
-
-.assessment-btn {
-  background: linear-gradient(45deg, #00ffe1, #00ccb3);
-  border: none;
-  color: #0d0d1f;
-  padding: 15px 30px;
-  border-radius: 25px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-}
-
-.assessment-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 255, 225, 0.3);
-}
-
-/* Community Page */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  margin: 60px 0;
-}
-
-.stat-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 40px 30px;
-  text-align: center;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.stat-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(255, 154, 255, 0.2);
-}
-
-.stat-number {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #00ffe1;
-  margin-bottom: 10px;
-}
-
-.stat-label {
-  font-size: 1.1rem;
-  color: #b0b0b0;
-}
-
-/* Events Grid */
-.events-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 30px;
-  margin: 60px 0;
-}
-
-.event-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 30px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.event-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(255, 154, 255, 0.2);
-}
-
-.event-date {
-  text-align: center;
-  min-width: 80px;
-}
-
-.event-date .day {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #00ffe1;
-  display: block;
-}
-
-.event-date .month {
-  font-size: 1rem;
-  color: #ff9aff;
-}
-
-.event-details {
-  flex: 1;
-  text-align: left;
-}
-
-.event-details h3 {
-  margin-bottom: 10px;
-  color: #ffffff;
-}
-
-.event-details p {
-  margin-bottom: 10px;
-  color: #b0b0b0;
-}
-
-.event-time {
-  color: #00ffe1;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.join-btn {
-  background: linear-gradient(45deg, #ff9aff, #ff6b9d);
-  border: none;
-  color: #0d0d1f;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.join-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 154, 255, 0.3);
-}
-
-/* Forum Categories */
-.forum-categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin: 60px 0;
-}
-
-.forum-category {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 40px 30px;
-  text-align: center;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.forum-category:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 255, 225, 0.2);
-}
-
-.category-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(45deg, #00ffe1, #00ccb3);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-}
-
-.category-icon i {
-  font-size: 2rem;
-  color: #0d0d1f;
-}
-
-.topic-count {
-  color: #ff9aff;
-  font-weight: bold;
-  margin-top: 15px;
-}
-
-/* Member Spotlight */
-.spotlight-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 40px;
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  margin: 60px 0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.member-avatar {
-  width: 100px;
-  height: 100px;
-  background: linear-gradient(45deg, #ff9aff, #ff6b9d);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.member-avatar i {
-  font-size: 3rem;
-  color: #0d0d1f;
-}
-
-.member-info {
-  flex: 1;
-  text-align: left;
-}
-
-.member-info h3 {
-  color: #00ffe1;
-  margin-bottom: 10px;
-}
-
-.member-info p {
-  font-style: italic;
-  margin-bottom: 15px;
-}
-
-.member-stats {
-  display: flex;
-  gap: 20px;
-}
-
-.member-stats span {
-  color: #b0b0b0;
-  font-size: 0.9rem;
-}
-
-/* Join Community */
-.join-community {
-  text-align: center;
-  margin: 80px 0;
-}
-
-.join-form {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 30px;
-  flex-wrap: wrap;
-}
-
-.join-input {
-  padding: 15px 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 25px;
-  color: #ffffff;
-  font-size: 1rem;
-  min-width: 300px;
-}
-
-.join-input::placeholder {
-  color: #b0b0b0;
-}
-
-.join-community-btn {
-  background: linear-gradient(45deg, #00ffe1, #00ccb3);
-  border: none;
-  color: #0d0d1f;
-  padding: 15px 30px;
-  border-radius: 25px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.join-community-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 255, 225, 0.3);
-}
-
-/* Contact Page */
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin: 60px 0;
-}
-
-.info-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 40px 30px;
-  text-align: center;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.info-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 255, 225, 0.2);
-}
-
-.info-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(45deg, #00ffe1, #00ccb3);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-}
-
-.info-icon i {
-  font-size: 2rem;
-  color: #0d0d1f;
-}
-
-/* Contact Form */
-.contact-form-section {
-  margin: 60px 0;
-}
-
-.contact-form {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 40px;
-  max-width: 600px;
-  margin: 0 auto;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-.form-group {
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  color: #ffffff;
-  font-weight: bold;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 12px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  color: #ffffff;
-  font-size: 1rem;
-  font-family: inherit;
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: #b0b0b0;
-}
-
-.submit-btn {
-  background: linear-gradient(45deg, #00ffe1, #00ccb3);
-  border: none;
-  color: #0d0d1f;
-  padding: 15px 30px;
-  border-radius: 25px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  width: 100%;
-}
-
-.submit-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 255, 225, 0.3);
-}
-
-/* Support Grid */
-.support-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin: 60px 0;
-}
-
-.support-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 40px 30px;
-  text-align: center;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.support-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(255, 154, 255, 0.2);
-}
-
-.support-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(45deg, #ff9aff, #ff6b9d);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-}
-
-.support-icon i {
-  font-size: 2rem;
-  color: #0d0d1f;
-}
-
-.support-btn {
-  background: linear-gradient(45deg, #ff9aff, #ff6b9d);
-  border: none;
-  color: #0d0d1f;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 20px;
-  transition: all 0.3s ease;
-}
-
-.support-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 154, 255, 0.3);
-}
-
-/* FAQ Section */
-.faq-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.faq-item {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  margin-bottom: 20px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.faq-question {
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.faq-question:hover {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.faq-question h3 {
-  margin: 0;
-  color: #ffffff;
-}
-
-.faq-question i {
-  color: #00ffe1;
-  transition: transform 0.3s ease;
-}
-
-.faq-item.active .faq-question i {
-  transform: rotate(180deg);
-}
-
-.faq-answer {
-  padding: 0 20px;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.faq-item.active .faq-answer {
-  padding: 20px;
-  max-height: 200px;
-}
-
-/* Footer */
-.main-footer {
-  margin-top: 80px;
-  padding: 40px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.footer-content p {
-  margin: 0;
-  color: #b0b0b0;
-}
-
-.social-links {
-  display: flex;
-  gap: 15px;
-}
-
-.social-links a {
-  color: #b0b0b0;
-  font-size: 1.5rem;
-  transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-  color: #00ffe1;
-  transform: translateY(-3px);
-}
-
-/* Animations */
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .nav-menu {
+// Initialize AOS
+AOS.init({
+  duration: 1200,
+  once: true,
+  offset: 100
+});
+
+// Cosmic background interactions
+document.addEventListener('DOMContentLoaded', function() {
+  // Add cosmic glow effect to planets on hover
+  const planets = document.querySelectorAll('.planet');
+  planets.forEach(planet => {
+    planet.addEventListener('mouseenter', function() {
+      this.style.transform = 'scale(1.2)';
+      this.style.boxShadow = '0 0 30px rgba(255,255,255,0.8)';
+    });
+    
+    planet.addEventListener('mouseleave', function() {
+      this.style.transform = 'scale(1)';
+      this.style.boxShadow = '';
+    });
+  });
+
+  // Add cosmic typing effect to titles
+  const titles = document.querySelectorAll('h1');
+  titles.forEach(title => {
+    if (title.classList.contains('cosmic-title')) {
+      const words = title.querySelectorAll('.title-word');
+      words.forEach((word, index) => {
+        word.style.opacity = '0';
+        setTimeout(() => {
+          word.style.transition = 'opacity 0.5s ease-in-out';
+          word.style.opacity = '1';
+        }, index * 200);
+      });
+    }
+  });
+
+  // Add cosmic particle interaction on click
+  document.addEventListener('click', function(e) {
+    const particle = document.createElement('div');
+    particle.style.position = 'fixed';
+    particle.style.left = e.clientX + 'px';
+    particle.style.top = e.clientY + 'px';
+    particle.style.width = '4px';
+    particle.style.height = '4px';
+    particle.style.background = '#fff';
+    particle.style.borderRadius = '50%';
+    particle.style.pointerEvents = 'none';
+    particle.style.zIndex = '9999';
+    particle.style.animation = 'cosmicParticle 1s ease-out forwards';
+    document.body.appendChild(particle);
+    
+    setTimeout(() => {
+      document.body.removeChild(particle);
+    }, 1000);
+  });
+});
+
+// Add cosmic particle animation
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes cosmicParticle {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0) translateY(-50px);
+      opacity: 0;
+    }
+  }
+`;
+document.head.appendChild(style);
+
+// Initialize particles.js
+particlesJS('particles-js', {
+  particles: {
+    number: {
+      value: 80,
+      density: {
+        enable: true,
+        value_area: 800
+      }
+    },
+    color: {
+      value: "#ffffff"
+    },
+    shape: {
+      type: "circle"
+    },
+    opacity: {
+      value: 0.5,
+      random: false,
+      anim: {
+        enable: false,
+        speed: 1,
+        opacity_min: 0.1,
+        sync: false
+      }
+    },
+    size: {
+      value: 3,
+      random: true,
+      anim: {
+        enable: false,
+        speed: 40,
+        size_min: 0.1,
+        sync: false
+      }
+    },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#00ffe1",
+      opacity: 0.4,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 2,
+      direction: "none",
+      random: false,
+      straight: false,
+      out_mode: "out",
+      bounce: false,
+      attract: {
+        enable: false,
+        rotateX: 600,
+        rotateY: 1200
+      }
+    }
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: {
+        enable: true,
+        mode: "repulse"
+      },
+      onclick: {
+        enable: true,
+        mode: "push"
+      },
+      resize: true
+    },
+    modes: {
+      grab: {
+        distance: 400,
+        line_linked: {
+          opacity: 1
+        }
+      },
+      bubble: {
+        distance: 400,
+        size: 40,
+        duration: 2,
+        opacity: 8,
+        speed: 3
+      },
+      repulse: {
+        distance: 200,
+        duration: 0.4
+      },
+      push: {
+        particles_nb: 4
+      },
+      remove: {
+        particles_nb: 2
+      }
+    }
+  },
+  retina_detect: true
+});
+
+// Audio Controls
+const audioToggle = document.getElementById('audioToggle');
+const backgroundAudio = document.getElementById('backgroundAudio');
+let isAudioPlaying = false;
+
+if (audioToggle && backgroundAudio) {
+  audioToggle.addEventListener('click', () => {
+    if (isAudioPlaying) {
+      backgroundAudio.pause();
+      audioToggle.innerHTML = '<i class="fas fa-music"></i>';
+      isAudioPlaying = false;
+    } else {
+      backgroundAudio.play();
+      audioToggle.innerHTML = '<i class="fas fa-pause"></i>';
+      isAudioPlaying = true;
+    }
+  });
+}
+
+// Mobile Navigation
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+if (hamburger && navMenu) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+
+  // Close menu when clicking on a link
+  document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
+  });
+}
+
+// Breathing Exercise
+const breathingCircle = document.getElementById('breathingCircle');
+const breathingText = document.getElementById('breathingText');
+const timer = document.getElementById('timer');
+const startBreathingBtn = document.getElementById('startBreathing');
+
+let breathingInterval;
+let isBreathing = false;
+let breathCount = 4;
+
+if (startBreathingBtn && breathingCircle) {
+  startBreathingBtn.addEventListener('click', () => {
+    if (!isBreathing) {
+      startBreathing();
+      startBreathingBtn.textContent = 'Stop Breathing';
+      isBreathing = true;
+    } else {
+      stopBreathing();
+      startBreathingBtn.textContent = 'Start Breathing Exercise';
+      isBreathing = false;
+    }
+  });
+}
+
+function startBreathing() {
+  let inhale = true;
+  breathCount = 4;
+  
+  breathingInterval = setInterval(() => {
+    if (inhale) {
+      breathingText.textContent = 'Breathe In';
+      breathingCircle.style.transform = 'scale(1.2)';
+      breathingCircle.style.borderColor = '#00ffe1';
+      timer.textContent = breathCount;
+      breathCount--;
+      
+      if (breathCount < 0) {
+        inhale = false;
+        breathCount = 4;
+      }
+    } else {
+      breathingText.textContent = 'Breathe Out';
+      breathingCircle.style.transform = 'scale(1)';
+      breathingCircle.style.borderColor = '#ff9aff';
+      timer.textContent = breathCount;
+      breathCount--;
+      
+      if (breathCount < 0) {
+        inhale = true;
+        breathCount = 4;
+      }
+    }
+  }, 1000);
+}
+
+function stopBreathing() {
+  clearInterval(breathingInterval);
+  breathingText.textContent = 'Breathe In';
+  breathingCircle.style.transform = 'scale(1)';
+  breathingCircle.style.borderColor = '#00ffe1';
+  timer.textContent = '4';
+}
+
+// Meditation Timer
+const timeDisplay = document.getElementById('timeDisplay');
+const startTimerBtn = document.getElementById('startTimer');
+const resetTimerBtn = document.getElementById('resetTimer');
+const timeOptions = document.querySelectorAll('.time-option');
+
+let timerInterval;
+let selectedTime = 0;
+let currentTime = 0;
+let isTimerRunning = false;
+
+if (timeOptions.length > 0) {
+  timeOptions.forEach(option => {
+    option.addEventListener('click', () => {
+      timeOptions.forEach(opt => opt.classList.remove('active'));
+      option.classList.add('active');
+      selectedTime = parseInt(option.dataset.time) * 60;
+      currentTime = selectedTime;
+      updateTimeDisplay();
+    });
+  });
+}
+
+if (startTimerBtn && timeDisplay) {
+  startTimerBtn.addEventListener('click', () => {
+    if (selectedTime === 0) {
+      alert('Please select a time first');
+      return;
+    }
+    
+    if (!isTimerRunning) {
+      startTimer();
+      startTimerBtn.textContent = 'Pause';
+      isTimerRunning = true;
+    } else {
+      pauseTimer();
+      startTimerBtn.textContent = 'Resume';
+      isTimerRunning = false;
+    }
+  });
+}
+
+if (resetTimerBtn) {
+  resetTimerBtn.addEventListener('click', () => {
+    resetTimer();
+  });
+}
+
+function startTimer() {
+  timerInterval = setInterval(() => {
+    currentTime--;
+    updateTimeDisplay();
+    
+    if (currentTime <= 0) {
+      clearInterval(timerInterval);
+      alert('Meditation session complete!');
+      resetTimer();
+    }
+  }, 1000);
+}
+
+function pauseTimer() {
+  clearInterval(timerInterval);
+}
+
+function resetTimer() {
+  clearInterval(timerInterval);
+  currentTime = selectedTime;
+  updateTimeDisplay();
+  startTimerBtn.textContent = 'Start Timer';
+  isTimerRunning = false;
+}
+
+function updateTimeDisplay() {
+  const minutes = Math.floor(currentTime / 60);
+  const seconds = currentTime % 60;
+  timeDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+}
+
+// Daily Quote Generator
+const dailyQuote = document.getElementById('dailyQuote');
+const quoteAuthor = document.getElementById('quoteAuthor');
+const newQuoteBtn = document.getElementById('newQuoteBtn');
+
+const quotes = [
+  {
+    text: "Everything in this universe is a reflection of you. Within you lies the energy of stars, galaxies, and infinite potential.",
+    author: "The Cosmic Energy"
+  },
+  {
+    text: "The moment you let go of resistance, life begins to flow effortlessly. The universe always has your back.",
+    author: "Cosmic Wisdom"
+  },
+  {
+    text: "Within silence, there is clarity. The cosmic voice whispers only to those who listen deeply.",
+    author: "Ancient Wisdom"
+  },
+  {
+    text: "You are not a drop in the ocean. You are the entire ocean in a drop.",
+    author: "Rumi"
+  },
+  {
+    text: "The universe is not outside of you. Look inside yourself; everything that you want, you already are.",
+    author: "Cosmic Consciousness"
+  },
+  {
+    text: "Energy flows where attention goes. Focus on the light, and the light will grow.",
+    author: "Energy Healing"
+  },
+  {
+    text: "In the vastness of space and the immensity of time, it is my joy to share a planet and an epoch with you.",
+    author: "Carl Sagan"
+  },
+  {
+    text: "The cosmos is within us. We are made of star-stuff. We are a way for the universe to know itself.",
+    author: "Cosmic Connection"
+  }
+];
+
+let currentQuoteIndex = 0;
+
+if (newQuoteBtn && dailyQuote && quoteAuthor) {
+  newQuoteBtn.addEventListener('click', () => {
+    let newIndex;
+    do {
+      newIndex = Math.floor(Math.random() * quotes.length);
+    } while (newIndex === currentQuoteIndex && quotes.length > 1);
+    
+    currentQuoteIndex = newIndex;
+    const quote = quotes[currentQuoteIndex];
+    
+    dailyQuote.style.opacity = '0';
+    quoteAuthor.style.opacity = '0';
+    
+    setTimeout(() => {
+      dailyQuote.textContent = quote.text;
+      quoteAuthor.textContent = `- ${quote.author}`;
+      dailyQuote.style.opacity = '1';
+      quoteAuthor.style.opacity = '1';
+    }, 300);
+  });
+}
+
+// Chakra Healing Buttons
+const healButtons = document.querySelectorAll('.heal-btn');
+
+healButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const chakra = button.dataset.chakra;
+    const chakraCard = button.closest('.chakra-card');
+    
+    // Add healing animation
+    chakraCard.style.transform = 'scale(1.05)';
+    chakraCard.style.boxShadow = '0 25px 50px rgba(255, 154, 255, 0.4)';
+    
+    setTimeout(() => {
+      chakraCard.style.transform = 'translateY(-10px)';
+      chakraCard.style.boxShadow = '0 20px 40px rgba(255, 154, 255, 0.2)';
+    }, 500);
+    
+    // Show healing message
+    const originalText = button.textContent;
+    button.textContent = 'Healing...';
+    button.disabled = true;
+    
+    setTimeout(() => {
+      button.textContent = 'Healed!';
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.disabled = false;
+      }, 1000);
+    }, 2000);
+  });
+});
+
+// Energy Assessment
+const startAssessmentBtn = document.getElementById('startAssessment');
+const energyLevelSelect = document.getElementById('energyLevel');
+
+if (startAssessmentBtn && energyLevelSelect) {
+  startAssessmentBtn.addEventListener('click', () => {
+    const energyLevel = energyLevelSelect.value;
+    let recommendation = '';
+    
+    switch (energyLevel) {
+      case 'high':
+        recommendation = 'Your energy is flowing beautifully! Consider sharing your positive energy with others through meditation or community activities.';
+        break;
+      case 'balanced':
+        recommendation = 'You are in perfect harmony! Maintain this balance through regular meditation and cosmic practices.';
+        break;
+      case 'low':
+        recommendation = 'Your energy needs replenishment. Try our "Cosmic Alignment" meditation session and focus on grounding practices.';
+        break;
+      case 'blocked':
+        recommendation = 'Energy blocks detected. We recommend our "Energy Healing" sessions and chakra clearing practices.';
+        break;
+    }
+    
+    alert(`Energy Assessment Complete!\n\nYour current energy level: ${energyLevel}\n\nRecommendation: ${recommendation}`);
+  });
+}
+
+// FAQ Accordion
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+  const question = item.querySelector('.faq-question');
+  
+  question.addEventListener('click', () => {
+    const isActive = item.classList.contains('active');
+    
+    // Close all other FAQ items
+    faqItems.forEach(otherItem => {
+      otherItem.classList.remove('active');
+    });
+    
+    // Toggle current item
+    if (!isActive) {
+      item.classList.add('active');
+    }
+  });
+});
+
+// Contact Form
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(contactForm);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const subject = formData.get('subject');
+    const message = formData.get('message');
+    
+    // Simulate form submission
+    const submitBtn = contactForm.querySelector('.submit-btn');
+    const originalText = submitBtn.textContent;
+    
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    
+    setTimeout(() => {
+      alert(`Thank you for your cosmic message, ${name}!\n\nWe have received your inquiry about "${subject}" and will respond to ${email} within 24 hours.\n\nMay the cosmic energy guide your journey! ✨`);
+      
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+      contactForm.reset();
+    }, 2000);
+  });
+}
+
+// Session Buttons
+const sessionButtons = document.querySelectorAll('.session-btn');
+
+sessionButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const session = button.dataset.session;
+    const sessionCard = button.closest('.session-card');
+    
+    // Add session start animation
+    sessionCard.style.transform = 'scale(1.05)';
+    sessionCard.style.boxShadow = '0 25px 50px rgba(255, 154, 255, 0.4)';
+    
+    setTimeout(() => {
+      sessionCard.style.transform = 'translateY(-10px)';
+      sessionCard.style.boxShadow = '0 20px 40px rgba(255, 154, 255, 0.2)';
+    }, 500);
+    
+    // Show session starting message
+    const originalText = button.textContent;
+    button.textContent = 'Starting Session...';
+    button.disabled = true;
+    
+    setTimeout(() => {
+      alert(`Starting ${session.replace('-', ' ')} session...\n\nPlease find a comfortable position and close your eyes.\n\nLet the cosmic energy guide your journey. ✨`);
+      
+      button.textContent = originalText;
+      button.disabled = false;
+    }, 1000);
+  });
+});
+
+// Join Community Form
+const joinCommunityBtn = document.querySelector('.join-community-btn');
+const joinInput = document.querySelector('.join-input');
+
+if (joinCommunityBtn && joinInput) {
+  joinCommunityBtn.addEventListener('click', () => {
+    const email = joinInput.value.trim();
+    
+    if (!email || !email.includes('@')) {
+      alert('Please enter a valid email address');
+      return;
+    }
+    
+    const originalText = joinCommunityBtn.textContent;
+    joinCommunityBtn.textContent = 'Joining...';
+    joinCommunityBtn.disabled = true;
+    
+    setTimeout(() => {
+      alert(`Welcome to the Cosmic Community! ✨\n\nWe've sent a confirmation email to ${email}.\n\nYou now have access to our forums, events, and cosmic family!`);
+      
+      joinCommunityBtn.textContent = originalText;
+      joinCommunityBtn.disabled = false;
+      joinInput.value = '';
+    }, 2000);
+  });
+}
+
+// Event Join Buttons
+const joinEventButtons = document.querySelectorAll('.join-btn');
+
+joinEventButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const eventCard = button.closest('.event-card');
+    const eventTitle = eventCard.querySelector('h3').textContent;
+    
+    const originalText = button.textContent;
+    button.textContent = 'Joining...';
+    button.disabled = true;
+    
+    setTimeout(() => {
+      alert(`You've successfully joined "${eventTitle}"! ✨\n\nWe'll send you a reminder 30 minutes before the event.\n\nPrepare to connect with cosmic energy!`);
+      
+      button.textContent = 'Joined';
+      button.style.background = 'linear-gradient(45deg, #00ffe1, #00ccb3)';
+      button.style.color = '#0d0d1f';
+    }, 1000);
+  });
+});
+
+// Support Buttons
+const supportButtons = document.querySelectorAll('.support-btn');
+
+supportButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const supportCard = button.closest('.support-card');
+    const supportTitle = supportCard.querySelector('h3').textContent;
+    
+    const originalText = button.textContent;
+    button.textContent = 'Connecting...';
+    button.disabled = true;
+    
+    setTimeout(() => {
+      alert(`Connecting you to ${supportTitle}...\n\nOur cosmic guides are ready to assist you.\n\nPlease wait while we establish the connection. ✨`);
+      
+      button.textContent = originalText;
+      button.disabled = false;
+    }, 1500);
+  });
+});
+
+// Read More Buttons
+const readButtons = document.querySelectorAll('.read-btn');
+
+readButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const textCard = button.closest('.text-card');
+    const title = textCard.querySelector('h3').textContent;
+    
+    const originalText = button.textContent;
+    button.textContent = 'Loading...';
+    button.disabled = true;
+    
+    setTimeout(() => {
+      alert(`Loading "${title}"...\n\nThis sacred text contains ancient cosmic wisdom.\n\nPrepare to expand your consciousness! ✨`);
+      
+      button.textContent = originalText;
+      button.disabled = false;
+    }, 1000);
+  });
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
+// Parallax effect for particles
+window.addEventListener('scroll', () => {
+  const scrolled = window.pageYOffset;
+  const particles = document.getElementById('particles-js');
+  if (particles) {
+    particles.style.transform = `translateY(${scrolled * 0.5}px)`;
+  }
+});
+
+// Auto-hide navigation on scroll down, show on scroll up
+let lastScrollTop = 0;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+  if (scrollTop > lastScrollTop && scrollTop > 100) {
+    // Scrolling down
+    navbar.style.transform = 'translateY(-100%)';
+  } else {
+    // Scrolling up
+    navbar.style.transform = 'translateY(0)';
+  }
+  
+  lastScrollTop = scrollTop;
+});
+
+// Add cosmic glow effect to interactive elements
+const interactiveElements = document.querySelectorAll('button, .cta-btn, .session-btn, .heal-btn, .join-btn, .support-btn, .read-btn');
+
+interactiveElements.forEach(element => {
+  element.addEventListener('mouseenter', () => {
+    element.style.boxShadow = '0 0 20px rgba(0, 255, 225, 0.5)';
+  });
+  
+  element.addEventListener('mouseleave', () => {
+    element.style.boxShadow = '';
+  });
+});
+
+// Cosmic typing effect for titles
+function typeWriter(element, text, speed = 100) {
+  let i = 0;
+  element.innerHTML = '';
+  
+  function type() {
+    if (i < text.length) {
+      element.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    }
+  }
+  
+  type();
+}
+
+// Initialize typing effect on page load
+document.addEventListener('DOMContentLoaded', () => {
+  const pageTitle = document.querySelector('.page-header h1');
+  if (pageTitle && !pageTitle.classList.contains('typed')) {
+    pageTitle.classList.add('typed');
+    const originalText = pageTitle.textContent;
+    typeWriter(pageTitle, originalText, 150);
+  }
+});
+
+// Cosmic particle interaction
+document.addEventListener('click', (e) => {
+  const particle = document.createElement('div');
+  particle.className = 'cosmic-particle';
+  particle.style.cssText = `
     position: fixed;
-    left: -100%;
-    top: 70px;
-    flex-direction: column;
-    background-color: rgba(13, 13, 31, 0.95);
-    width: 100%;
-    text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-    padding: 20px 0;
-  }
+    left: ${e.clientX}px;
+    top: ${e.clientY}px;
+    width: 4px;
+    height: 4px;
+    background: #00ffe1;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    animation: cosmicParticle 1s ease-out forwards;
+  `;
+  
+  document.body.appendChild(particle);
+  
+  setTimeout(() => {
+    particle.remove();
+  }, 1000);
+});
 
-  .nav-menu.active {
-    left: 0;
+// Add CSS for cosmic particle animation
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes cosmicParticle {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(20);
+      opacity: 0;
+    }
   }
+`;
+document.head.appendChild(style);
 
-  .hamburger {
-    display: flex;
-  }
-
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .hamburger.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  .container {
-    padding: 100px 15px 30px;
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .join-form {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .join-input {
-    min-width: 250px;
-  }
-
-  .spotlight-card {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .member-stats {
-    justify-content: center;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 2rem;
-  }
-
-  .title-word {
-    font-size: 2.5rem;
-  }
-
-  .cosmic-title {
-    flex-direction: column;
-  }
-
-  .features-grid,
-  .session-grid,
-  .category-grid,
-  .chakra-grid,
-  .technique-grid,
-  .events-grid,
-  .forum-categories,
-  .support-grid,
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .event-card {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .timer-controls {
-    flex-direction: column;
-    align-items: center;
-  }
-} 
+console.log('✨ Cosmic Energy Website Loaded Successfully! ✨');
+console.log('May the cosmic forces guide your journey through this digital realm.'); 
